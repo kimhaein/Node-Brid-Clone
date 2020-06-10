@@ -1,2 +1,2 @@
-# Node-Brid-Clone
-노드 버드 강의 실습
+# react-nodebird
+노드 버드 리뉴얼 강의 실습
