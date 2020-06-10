@@ -1,7 +1,9 @@
 import React, { useState, useCallback } from 'react'
+import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { Form, Input, Button } from 'antd'
 import styled from 'styled-components'
+import useInput from '../hooks/useInput'
 
 const ButtonWrapper = styled.div`
   margin-top:10px;
@@ -12,16 +14,8 @@ const FormWrapper = styled(Form)`
 `
 
 const LoginForm = ({ setIsLoggenIn }) => {
-  const [id, setId] = useState('')
-  const [password, setPassword] = useState('')
-
-  const onChangeId = useCallback((e) => {
-    setId(e.target.value)
-  }, [])
-
-  const onChangePassword = useCallback((e) => {
-    setPassword(e.target.value)
-  }, [])
+  const [id, setId] = useInput('')
+  const [password, setPassword] = useInput('')
 
   const onSumbitForm = useCallback(() => {
     console.log(id, password)
@@ -37,7 +31,7 @@ const LoginForm = ({ setIsLoggenIn }) => {
         <Input
           name="user-id"
           value={id}
-          onChange={onChangeId}
+          onChange={setId}
           required
         />
       </div>
@@ -49,7 +43,7 @@ const LoginForm = ({ setIsLoggenIn }) => {
           type="password"
           name="user-password"
           value={password}
-          onChange={onChangePassword}
+          onChange={setPassword}
           required />
       </div>
       <ButtonWrapper>
@@ -58,6 +52,10 @@ const LoginForm = ({ setIsLoggenIn }) => {
       </ButtonWrapper>
     </FormWrapper>
   )
+}
+
+LoginForm.propTypes = {
+  setIsLoggenIn: PropTypes.func.isRequired,
 }
 
 export default LoginForm
