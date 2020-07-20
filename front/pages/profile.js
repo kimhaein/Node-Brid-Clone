@@ -13,9 +13,9 @@ const Profile = () => {
   ]
 
   const followerList = [
-    { nickname: "제로초" },
-    { nickname: "하이" },
-    { nickname: "노드버드" }
+    { nickname: "제로초1" },
+    { nickname: "하이2" },
+    { nickname: "노드버드3" }
   ]
 
   return (

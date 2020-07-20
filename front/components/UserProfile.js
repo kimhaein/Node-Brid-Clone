@@ -5,7 +5,9 @@ const UserProfile = ({ setIsLoggenIn }) => {
 
   const onLogout = useCallback(() => {
     setIsLoggenIn(false)
-  }, [])
+  }, []);
+
+  // 배열로 jsx 사용할 경우, key 필수
   return (
     <Card
       actions={[

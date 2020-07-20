@@ -12,8 +12,6 @@ const SearchInput = styled(Input.Search)`
   verticalAlign: 'middle'
 `
 
-// const searchInputStyle = ()
-
 const AppLayOut = ({ children }) => {
   const [isLoggenIn, setIsLoggenIn] = useState(false)
   return (
@@ -42,7 +40,7 @@ const AppLayOut = ({ children }) => {
           <div>{children}</div>
         </Col>
         <Col xs={24} md={6}>
-          <a href="https://github.com/kimhaein/react-nodebird" target="_blank">깃허브</a>
+          <a href="https://github.com/kimhaein/react-nodebird" target="_blank" rel='noreferrer noopener'>깃허브</a>
         </Col>
       </Row>
     </div>

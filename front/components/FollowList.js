@@ -1,9 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import styled from 'styled-components'
 import { List, Button, Card } from 'antd'
 import { StopOutlined } from '@ant-design/icons'
 
+
+const ButtonWrapper = styled.div`
+  text-align: center;
+  margin: 10px 0
+`
 const FollowList = ({ header, data }) => {
   return (
     <List
@@ -12,9 +17,9 @@ const FollowList = ({ header, data }) => {
       size="small"
       header={<div>{header}</div>}
       loadMore={
-        <div style={{ textAlign: "center", margin: "10px 0" }}>
+        <ButtonWrapper>
           <Button>더보기</Button>
-        </div>
+        </ButtonWrapper>
       }
       bordered
       dataSource={data}
