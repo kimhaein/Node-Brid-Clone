@@ -1,10 +1,12 @@
 import React, { useCallback } from 'react'
+import { useDispatch } from 'react-redux';
+import { logoutAction } from '../reducers/user'
 import { Card, Avatar, Button } from 'antd'
 
-const UserProfile = ({ setIsLoggenIn }) => {
-
+const UserProfile = () => {
+  const dispatch = useDispatch();
   const onLogout = useCallback(() => {
-    setIsLoggenIn(false)
+    dispatch(logoutAction())
   }, []);
 
   // 배열로 jsx 사용할 경우, key 필수

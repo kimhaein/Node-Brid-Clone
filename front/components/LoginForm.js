@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { Form, Input, Button } from 'antd'
 import styled from 'styled-components'
 import useInput from '../hooks/useInput'
+import { useDispatch } from 'react-redux'
+import { loginAction } from '../reducers/user'
 
 // 스타일을 객체로 넣을 경우, 값이 같아도 리렌더링이 됨 최적화 필요!
 // useCallback : 함수를 캐싱
@@ -15,17 +17,18 @@ const ButtonWrapper = styled.div`
   margin-top:10px;
 `
 
-const LoginForm = ({ setIsLoggenIn }) => {
-  const [id, setId] = useInput('')
-  const [password, setPassword] = useInput('')
+const LoginForm = () => {
+  const dispatch = useDispatch();
+  const [id, setId] = useInput('');
+  const [password, setPassword] = useInput('');
 
   const onSumbitForm = useCallback(() => {
-    setIsLoggenIn(true)
-  }, [])
+    dispatch(loginAction({ id, password }))
+  }, [id, password])
 
   // onFinish : e.preventDefalut() 이미 적용
   return (
-    <form onFinish={onSumbitForm}>
+    <Form onFinish={onSumbitForm}>
       <div>
         <label htmlFor="user-id">아이디</label>
       </div>
@@ -52,12 +55,11 @@ const LoginForm = ({ setIsLoggenIn }) => {
         <Button type="primary" htmlType="submit" loading={false}>로그인</Button>
         <Link href="/signup"><a><Button>회원가입</Button></a></Link>
       </ButtonWrapper>
-    </form>
+    </Form>
   )
 }
 
 LoginForm.propTypes = {
-  setIsLoggenIn: PropTypes.func.isRequired,
 }
 
 export default LoginForm
