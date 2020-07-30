@@ -6,11 +6,13 @@ export const initialState = {
       id: "kendy93",
       nickname: '제로초',
     },
-    content: '첫번째 게시글 #헤시태그 #익스프레스',
+    content: '첫번째 게시글 #해시태그 #익스프레스',
     Images: [{
       src: 'https://bookthumb-phinf.pstatic.net/cover/137/995/13799585.jpg?udate=20180726',
     }, {
       src: 'https://gimg.gilbut.co.kr/book/BN001958/rn_view_BN001958.jpg',
+    }, {
+      src: 'https://gimg.gilbut.co.kr/book/BN001998/rn_view_BN001998.jpg',
     }],
     Comments: [{
       User: {
@@ -39,14 +41,12 @@ const dummyPost = {
     id: 2,
     nickname: '제로초2',
   },
-  content: '두번째 게시글 #헤시태그 #익스프레스',
+  content: '두번째 게시글 #해시태그 #익스프레스',
   Images: [{
     src: 'https://bookthumb-phinf.pstatic.net/cover/137/995/13799585.jpg?udate=20180726',
   }, {
     src: 'https://gimg.gilbut.co.kr/book/BN001958/rn_view_BN001958.jpg',
-  }, {
-    src: 'https://gimg.gilbut.co.kr/book/BN001998/rn_view_BN001998.jpg',
-  }],
+  },],
   Comments: [{
     User: {
       nickname: 'hi2',
